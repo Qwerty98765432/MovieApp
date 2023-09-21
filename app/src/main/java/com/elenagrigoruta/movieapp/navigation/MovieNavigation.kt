@@ -28,7 +28,6 @@ fun MovieNavigation() {
                 type = NavType.StringType
             })
         ) { backStackEntry ->
-
             DetailsScreen(
                 navController = navController,
                 backStackEntry.arguments?.getString("movie"))
