@@ -96,14 +96,16 @@ fun MovieRow(movie: String, onItemClick: (String) -> Unit = {}) {
                     .size(100.dp),
                 shape = RectangleShape,
                 elevation = 4.dp
-            ) {
+            )
+            {
                 Icon(
                     imageVector = Icons.Default.AccountBox,
                     contentDescription = "Movie Image"
                 )
             }
+            Text(text = movie)
+
         }
-        Text(text = movie)
     }
 }
 
