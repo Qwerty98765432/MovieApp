@@ -29,21 +29,22 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.elenagrigoruta.movieapp.navigation.MovieScreens
 
+
 @Composable
 fun HomeScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                backgroundColor = Color.Magenta,
+                backgroundColor = Color.LightGray,
                 elevation = 5.dp
             ) {
                 Text(text = "Movies")
             }
         },
-        content = {
-            MainContent(navController = navController)
-        }
     )
+    {
+        MainContent(navController = navController)
+    }
 }
 
 @Composable
@@ -64,13 +65,13 @@ fun MainContent(
         LazyColumn {
             items(items = movieList) {
                 MovieRow(movie = it) { movie ->
-                        navController.navigate(route = MovieScreens.DetailScreen.name)
-                    }
+                    navController.navigate(route = MovieScreens.DetailScreen.name + "/$movie")
                 }
-
             }
+
         }
     }
+}
 
 @Composable
 fun MovieRow(movie: String, onItemClick: (String) -> Unit = {}) {
@@ -96,9 +97,13 @@ fun MovieRow(movie: String, onItemClick: (String) -> Unit = {}) {
                 shape = RectangleShape,
                 elevation = 4.dp
             ) {
-                Icon(imageVector = Icons.Default.AccountBox, contentDescription = "Movie Image")
+                Icon(
+                    imageVector = Icons.Default.AccountBox,
+                    contentDescription = "Movie Image"
+                )
             }
         }
+        Text(text = movie)
     }
 }
 
