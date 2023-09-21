@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -28,7 +27,7 @@ import androidx.navigation.NavController
 fun DetailsScreen(navController: NavController, movieData: String?) {
     Scaffold(topBar = {
         TopAppBar(
-            backgroundColor = Color.LightGray,
+            backgroundColor = Color.Transparent,
             elevation = 5.dp
         ) {
             Row(horizontalArrangement = Arrangement.Start) {
@@ -40,22 +39,53 @@ fun DetailsScreen(navController: NavController, movieData: String?) {
                 Text(text = "Movies")
             }
         }
+
     }) {
-        Text(text = movieData.toString(), style = MaterialTheme.typography.h5)
-
-    }
-    Surface(
-        modifier = Modifier
-            .fillMaxHeight()
-            .fillMaxWidth()
-    ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+        Surface(
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth()
         ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
 
-            Text(text = movieData.toString(), style = MaterialTheme.typography.h5)
-            Spacer(modifier = Modifier.height(23.dp))
+                Text(
+                    text = movieData.toString(),
+                    style = MaterialTheme.typography.h5
+                )
+            }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

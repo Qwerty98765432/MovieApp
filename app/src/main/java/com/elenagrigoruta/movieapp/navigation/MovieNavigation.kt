@@ -23,7 +23,7 @@ fun MovieNavigation() {
         }
 
         composable(
-            MovieScreens.DetailScreen.name + "/ {movie}",
+            MovieScreens.DetailScreen.name + "/{movie}",
             arguments = listOf(navArgument(name = "movie") {
                 type = NavType.StringType
             })
