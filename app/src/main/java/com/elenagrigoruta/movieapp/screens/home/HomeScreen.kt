@@ -1,5 +1,6 @@
 package com.elenagrigoruta.movieapp.screens.home
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -19,7 +20,7 @@ import com.elenagrigoruta.movieapp.widgets.MovieRow
 
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun homeScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -31,12 +32,13 @@ fun HomeScreen(navController: NavController) {
         },
     )
     {
-        MainContent(navController = navController)
+        mainContent(navController = navController)
     }
 }
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun MainContent(
+fun mainContent(
     navController: NavController,
     movieList: List<Movie> = getMovies())
  {
