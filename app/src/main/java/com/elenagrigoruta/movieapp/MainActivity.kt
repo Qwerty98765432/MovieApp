@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.elenagrigoruta.movieapp.navigation.movieNavigation
+import com.elenagrigoruta.movieapp.navigation.MovieNavigation
 import com.elenagrigoruta.movieapp.ui.theme.MovieAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyApp {
-                movieNavigation()
+                MovieNavigation()
             }
         }
     }
@@ -30,6 +30,6 @@ fun MyApp(content: @Composable () -> Unit) {
 @Composable
 fun DefaultPreview() {
     MyApp {
-        movieNavigation()
+        MovieNavigation()
     }
 }

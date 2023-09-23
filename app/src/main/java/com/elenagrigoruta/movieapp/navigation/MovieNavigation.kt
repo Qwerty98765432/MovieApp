@@ -6,11 +6,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.elenagrigoruta.movieapp.screens.home.homeScreen
+import com.elenagrigoruta.movieapp.screens.home.HomeScreen
 import com.elenagrigoruta.movieapp.screens.home.details.detailsScreen
 
 @Composable
-fun movieNavigation() {
+fun MovieNavigation() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
@@ -19,7 +19,7 @@ fun movieNavigation() {
 
         composable(MovieScreens.HomeScreen.name) {
             //here we pass where this should lead us to
-            homeScreen(navController = navController)
+            HomeScreen(navController = navController)
         }
 
         composable(

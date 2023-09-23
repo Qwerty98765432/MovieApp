@@ -20,7 +20,7 @@ import com.elenagrigoruta.movieapp.widgets.MovieRow
 
 
 @Composable
-fun homeScreen(navController: NavController) {
+fun HomeScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -32,13 +32,13 @@ fun homeScreen(navController: NavController) {
         },
     )
     {
-        mainContent(navController = navController)
+        MainContent(navController = navController)
     }
 }
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun mainContent(
+fun MainContent(
     navController: NavController,
     movieList: List<Movie> = getMovies())
  {
