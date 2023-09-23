@@ -37,7 +37,7 @@ import com.elenagrigoruta.movieapp.widgets.MovieRow
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun detailsScreen(navController: NavController, movieId: String?) {
+fun DetailsScreen(navController: NavController, movieId: String?) {
     val newMovieList = getMovies().filter { movie ->
         movie.id == movieId
     }
@@ -71,14 +71,14 @@ fun detailsScreen(navController: NavController, movieId: String?) {
                 Spacer(modifier = Modifier.height(8.dp))
                 Divider()
                 Text(text = "Movie Images")
-                horizontalScrollableImageView(newMovieList)
+                HorizontalScrollableImageView(newMovieList)
             }
         }
     }
 }
 
 @Composable
-private fun horizontalScrollableImageView(newMovieList: List<Movie>) {
+private fun HorizontalScrollableImageView(newMovieList: List<Movie>) {
     LazyRow {
         items(newMovieList[0].images) { image ->
             Card(
